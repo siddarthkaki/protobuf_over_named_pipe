@@ -19,8 +19,6 @@ int main()
     std::string myfifostr = "pipe_dream";
     const char * myfifo = myfifostr.c_str();
   
-    std::string data_str;
-
     // Creating the named file(FIFO) 
     // mkfifo(<pathname>, <permission>)
 
@@ -31,7 +29,7 @@ int main()
     { 
         // read byte size of pose object from pipe
         size_t size;
-        rd = read(fd, &size, sizeof(size)); //read len
+        rd = read(fd, &size, sizeof(size));
 
         if (rd == sizeof(size)) // if successfully received size
         {
